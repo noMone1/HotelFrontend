@@ -3,24 +3,6 @@ import AddProduct from "../components/AddProduct";
 import UpdateProduct from "../components/UpdateProduct";
 import AuthContext from "../AuthContext";
 
-const DummyData = [
-  {
-    _id: '1',
-    name: 'Product 1',
-    manufacturer: 'Manufacturer A',
-    stock: 10,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-  {
-    _id: '2',
-    name: 'Product 2',
-    manufacturer: 'Manufacturer B',
-    stock: 0,
-    description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  },
-  // Add more dummy data as needed
-];
-
 function Inventory() {
   const [showProductModal, setShowProductModal] = useState(false);
   const [showUpdateModal, setShowUpdateModal] = useState(false);
@@ -131,9 +113,9 @@ function Inventory() {
           />
         )}
         {showUpdateModal && (
-          <UpdateProduct
-            updateProductData={updateProduct}
-            updateModalSetting={updateProductModalSetting}
+          <AddProduct
+          addProductModalSetting={addProductModalSetting}
+          handlePageUpdate={handlePageUpdate}
           />
         )}
 
@@ -144,7 +126,7 @@ function Inventory() {
             <thead>
               <tr>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900 font-bold">
-                  Room Number
+                  Room 
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900 font-bold">
                   Type
@@ -154,9 +136,6 @@ function Inventory() {
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900 font-bold">
                   Status
-                </th>
-                <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900 font-bold">
-                  Available
                 </th>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900 font-bold">
                   More
@@ -180,9 +159,7 @@ function Inventory() {
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                       {element.status}
                     </td>
-                    <td className="whitespace-nowrap px-4 py-2 text-gray-700">
-                      {10}
-                    </td>
+                    
                     <td className="whitespace-nowrap px-4 py-2 text-gray-700">
                       <span
                         className="text-green-700 cursor-pointer"

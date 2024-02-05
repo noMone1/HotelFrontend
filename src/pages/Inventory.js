@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import AddProduct from "../components/AddProduct";
 import UpdateProduct from "../components/UpdateProduct";
 import AuthContext from "../AuthContext";
-
+import Table from "../components/Table"
 function Inventory() {
   const [showProductModal, setShowProductModal] = useState(false);
   const [showUpdateModal, setShowUpdateModal] = useState(false);
@@ -122,7 +122,7 @@ function Inventory() {
         {/* Table  */}
         <div className="overflow-x-auto rounded-lg border bg-white border-gray-200 ">
          
-          <table className="min-w-full divide-y-2 divide-gray-200 text-sm">
+          <table className="min-w-full divide-y-4 divide-gray-200 text-sm">
             <thead>
               <tr>
                 <th className="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900 font-bold">
@@ -143,10 +143,10 @@ function Inventory() {
               </tr>
             </thead>
 
-            <tbody className="divide-y divide-gray-200">
+            <tbody className="divide-y divide-gray-200 ">
               {products.map((element, index) => {
                 return (
-                  <tr key={element._id}>
+                  <tr key={element._id} >
                     <td className="whitespace-nowrap px-4 py-2  text-gray-900">
                       {element.roomNumber}
                     </td>

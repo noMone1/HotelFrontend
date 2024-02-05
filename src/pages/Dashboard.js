@@ -276,17 +276,17 @@ function Dashboard() {
           </div>
         </article>
         <div className="flex justify-around bg-white rounded-lg py-8 col-span-full justify-center">
-          <div>
+          {/* <div>
             <Chart
               options={chart.options}
               series={chart.series}
               type="bar"
               width="500"
             />
-          </div>
-          <div>
+          </div> */}
+          {/* <div>
             <Doughnut data={data} />
-          </div>
+          </div> */}
         </div>
       </div>
     </>
